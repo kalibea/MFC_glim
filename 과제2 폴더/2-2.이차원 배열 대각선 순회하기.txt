@@ -1,0 +1,19 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> board, int k) {
+    int answer = 0;
+    int rows = board.size();        // board의 행 개수
+    int cols = board[0].size();     // board의 열 개수
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (i + j <= k) {       // 조건: i + j <= k
+                answer += board[i][j]; // 조건에 맞는 값 합산
+            }
+        }
+    }
+    return answer;
+}
